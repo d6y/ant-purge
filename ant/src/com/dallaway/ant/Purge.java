@@ -51,7 +51,7 @@ import org.apache.tools.ant.types.FileSet;
  * files will be left.</p>
  * 
  * @author Richard Dallaway <a href="mailto:richard@dallaway.com">richard@dallaway.com</a>
- * @version $Revision: 1.3 $ $Date: 2002/10/14 17:53:46 $
+ * @version $Revision$ $Date$
  */
 public class Purge extends Task implements Comparator
 {
