@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<project name="OwnTaskExample" default="main" basedir=".">
+<taskdef name="purge" classname="com.dallaway.ant.Purge"/>
+
+<target name="main">
+
+	<purge test="false" keep="5">
+		<fileset dir="logs"/>
+		<fileset dir="output"/>
+	</purge>
+</target>
+</project>
+
+
