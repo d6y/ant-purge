@@ -1,31 +1,27 @@
 <project name="ant" basedir="." default="jar">
 
-<target name="compile">
-	<mkdir dir="bin"/>
-	<javac srcdir="src" destdir="bin" target="1.4">
-		<classpath>
-			<pathelement location="lib/ant.jar"/>
-		</classpath>
-	</javac>
-</target>
-	
-<target name="javadoc">
-	<mkdir dir="apidoc"/>
-	<javadoc 
-		packagenames="com.dallaway.ant" 
-		sourcepath="src" destdir="apidoc" 
-		author="true" version="true"/>
-</target>
+	<target name="compile">
+		<mkdir dir="bin" />
+		<javac srcdir="src" destdir="bin" target="1.5">
+			<classpath>
+				<pathelement location="lib/ant.jar" />
+			</classpath>
+		</javac>
+	</target>
 
-<target name="jar" depends="compile,javadoc">
-	<jar jarfile="purge.jar">
-		<fileset file="license.txt"/>
-		<fileset dir="bin"/>
-		<zipfileset prefix="src" dir="src"/>
-		<zipfileset prefix="apidoc" dir="apidoc"/>
-		<zipfileset prefix="examples" dir="examples"/>
-	</jar>
+	<target name="javadoc">
+		<mkdir dir="apidoc" />
+		<javadoc packagenames="com.dallaway.ant" sourcepath="src" destdir="apidoc" author="true" version="true" />
+	</target>
 
-</target>
+	<target name="jar" depends="compile,javadoc">
+		<jar jarfile="purge.jar">
+			<fileset file="license.txt" />
+			<fileset dir="bin" />
+			<zipfileset prefix="src" dir="src" />
+			<zipfileset prefix="apidoc" dir="apidoc" />
+			<zipfileset prefix="examples" dir="examples" />
+		</jar>
 
+	</target>
 </project>
